@@ -2,7 +2,7 @@
 
 My current obsession is to make it as easy as possible to train, run, and research energy forecasting systems.
 
-# Broad road map:
+# Broad roadmap:
 1. Make it trivial to lazily open petabyte-sized numerical weather datasets. To this end, I'm currently working on [`hypergrib`](https://github.com/jackkelly/hypergrib) and [`explore_nwps`](https://github.com/JackKelly/explore_nwps).
 2. But some read patterns will never be well-served by reading directly from GRIB. This is because each GRIB message extends across the entire horizontal geospatial extent of the dataset so it will be inefficient to read data for a small number of geospatial locations from GRIB. So the next project I plan to work on will be an automatic caching system. Again, the focus will be on making life as easy as possible for the developer. See below for more details.
 
@@ -14,8 +14,10 @@ Once these essential components are in place, some other cool projects might inc
 
 # Details
 
-## Analysis tool for comparing NWPs against each other, and against ground truth
+## Tool for comparing NWPs against each other, and against ground truth
 Where would `hypergrib` run? Perhaps _in_ the browser, using `wasm`?! (but [tokio's `rt-multi-thread` feature doesn't work on `wasm`](https://docs.rs/tokio_wasi/latest/tokio/#wasm-support), which might be a deal-breaker.) Or perhaps run a web service in the cloud, close to the data, across multiple machines. And [expose a standards compliant API like Environmental Data Retrieval](https://github.com/JackKelly/hypergrib/issues/19) for the front-end?
+
+Perhaps include tools to look at correlation between NWPs and actual measurements, including actual measurements from the energy system (like wind power production or solar power generation).
 
 ## Caching GRIB data so you still get high performance for read patterns which don't fit with GRIB's data layout
 What if users want to read long timeseries for a small number of geographical points (a "churro-shaped" array)? No amount of `hypergrib` trickery will get round the physical constraint that each GRIB message is a 2D array representing a horizontal plane.
