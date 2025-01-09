@@ -1,16 +1,24 @@
 **Let's make it super easy to use weather forecast data**
 
 My current obsession is to make it as easy as possible to train, run, and research energy forecasting systems.
+We're a long way from this "dream" right now! But we're getting there! Please see [this blog post for more info on this idea](https://openclimatefix.org/post/lazy-loading-making-it-easier-to-access-vast-datasets-of-weather-satellite-data).
+
+# Use cases and benefits:
+- Academics and students can easily experiment with energy forecasting (using realistic datasets).
+- Companies can build state-of-the-art energy forecasts in-house (e.g. grid operators, battery optimisers, etc.).
+- We can _finally_ build a public leaderboard of different energy forecasting algorithms.
+- Maybe we could run a simple and cheap energy forecasting service with state-of-the-art performance.
 
 # Broad roadmap:
 1. Make it trivial to lazily open petabyte-sized numerical weather datasets. To this end, I'm currently working on [`hypergrib`](https://github.com/jackkelly/hypergrib) and [`explore_nwps`](https://github.com/JackKelly/explore_nwps).
 2. But some read patterns will never be well-served by reading directly from GRIB. This is because each GRIB message extends across the entire horizontal geospatial extent of the dataset so it will be inefficient to read data for a small number of geospatial locations from GRIB. So the next project I plan to work on will be an automatic caching system. Again, the focus will be on making life as easy as possible for the developer. See below for more details.
 
-Once these essential components are in place, some other cool projects might include:
+Once these essential components are in place, some other cool projects might include (in no particular order):
 - An analysis tool (with a UI a bit like [Windy.com](https://windy.com)'s UI?) for comparing different NWPs against each other and against ground truth. 
 - On the fly processing and analytics. E.g. reprojection.
 - Distribute `hypergrib`'s workload across multiple machines. So, for example, users can get acceptable IO performance even if they ask for "churro-shaped" data arrays.
-
+- Build a public leaderboard of different energy forecasting algorithms, measured against a standard validation dataset (again, using the types of huge datasets that are used in industry, rather than toy academic datasets). Anyone could contribute algorithms to the leaderboard.
+- Build ML models using all this lovely data! :)
 
 # Details
 
