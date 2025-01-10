@@ -1,11 +1,9 @@
-**Let's make it super easy to use weather forecast data**
-
-My current obsession is to make it as easy as possible to train, run, and research energy forecasting systems.
+My current obsession is to help accelerate progress in energy forecasting by making it as easy as possible to train, run, and research energy forecasting systems.
 
 # Why?
 Better energy forecasts should help reduce energy costs and CO₂ emissions.
 
-There are a huge number of very talented energy forecasters out there. But I believe they are not able to be as effective as they could be. It's not their fault. The problem is a lack of infrastructure. The aim of my work is to make it as easy as possible to work with these huge NWP datasets. This should enable all those talented energy forecasters to do their best work!
+There are a huge number of very talented energy forecasters out there. But I believe they are not able to be as effective as they could be. It's not their fault. The problem is a lack of infrastructure. 
 
 ## How do we accelerate progress in energy forecasting?
 Arguably, the current craze for all-things-AI was triggered by two innovations:
